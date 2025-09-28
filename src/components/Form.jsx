@@ -144,7 +144,7 @@ function Form() {
 
       {predictionResult && (
         <div className="div-card">
-          <h3>Hola {name}, aqui esta horóscopo de hoy</h3>
+          <h3>Hola {name}!, Tu signo es: </h3>
           <div className="text-sing">
             <h3>{predictionResult.sign}</h3>
             <div className="">
