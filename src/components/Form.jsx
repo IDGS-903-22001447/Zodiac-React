@@ -111,7 +111,7 @@ function Form() {
   return (
     <div className="main-container"> {/* Contenedor principal para ambas tarjetas */}
       <div className="div-card">
-        <h3>Descubre tu horóscopo del día</h3>
+        <h3>Descubre tu signo zoadiacal</h3>
         <form onSubmit={prediction}>
           <label htmlFor="name">Nombre</label>
           <br />
@@ -126,7 +126,7 @@ function Form() {
             className="input-value"
           />
           <br />
-          <label htmlFor="birthdate">Fecha de nacimiento</label>
+          <label htmlFor="birthdate">Ingresa tu Fecha de nacimiento</label>
           <br />
           <input
             type="date"
