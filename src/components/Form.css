@@ -1,0 +1,168 @@
+/* Estilo del body para aplicar el color de fondo verde pastel bonito */
+body {
+  background-color: #e6f7e6; /* Verde pastel muy claro para el fondo */
+  font-family: 'Inter', sans-serif;
+}
+
+/* ------------------------------------------------------------------- */
+/* CONTENEDOR PRINCIPAL: Flexbox para colocar las tarjetas una al lado de la otra */
+/* ------------------------------------------------------------------- */
+.main-container {
+  display: flex; /* Activa el modo Flexbox */
+  gap: 30px; /* Espacio entre las tarjetas */
+  flex-wrap: wrap; /* Permite que las tarjetas se apilen en móviles (responsive) */
+  justify-content: center; /* Centra el grupo de tarjetas horizontalmente */
+  align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+  margin-top: 50px;
+  padding: 0 15px; /* Pequeño padding para evitar que toque los bordes en móvil */
+}
+
+/* ------------------------------------------------------------------- */
+/* ESTILO GENERAL DE LA TARJETA (Formulario y Resultado) */
+/* ------------------------------------------------------------------- */
+.div-card {
+  background-color: #ffffff;
+  border-radius: 18px; /* Bordes más redondeados */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  padding: 30px;
+  width: 100%;
+  max-width: 400px; /* Ancho máximo para el look de tarjeta */
+  transition: transform 0.3s ease-out; /* Mantiene la transición de hover */
+  /* Añadidos para mejor estructura interna */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+}
+
+.div-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ------------------------------------------------------------------- */
+/* TIPOGRAFÍA Y COMPONENTES DE FORMA */
+/* ------------------------------------------------------------------- */
+h3 {
+  color: #38a169; /* Verde pastel más oscuro y vibrante para el título */
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.8rem; /* Ligeramente más grande */
+  margin-bottom: 20px; /* Más espacio abajo */
+}
+
+label {
+  color: #444;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  align-self: flex-start; /* Alinea las etiquetas a la izquierda dentro de la tarjeta */
+}
+
+.input-value {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7f7f7; /* Fondo sutil */
+  color: #333;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.input-value:focus {
+  outline: none;
+  border-color: #6c63ff; /* Mantenemos un color de enfoque distinto o lo cambiamos */
+  border-color: #38a169; /* Cambiado a un verde de enfoque */
+  box-shadow: 0 0 8px rgba(56, 161, 105, 0.6);
+}
+
+.button {
+  /* Fondo del botón en degradado de verde pastel bonito */
+  background: linear-gradient(135deg, #48bb78, #38a169); /* Tonos de verde pastel */
+  color: #fff;
+  padding: 14px;
+  margin-top: 30px; /* Más margen para separarlo de los inputs */
+  border: none;
+  border-radius: 10px;
+  font-size: 17px; /* Ligeramente más grande */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  box-shadow: 0 5px 15px rgba(56, 161, 105, 0.4); /* Sombra acorde al color */
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #38a169, #48bb78); /* Invertido o ligeramente más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Efecto más sutil */
+}
+
+/* ------------------------------------------------------------------- */
+/* ESTILOS DE PREDICCIÓN (Tarjeta Derecha) */
+/* ------------------------------------------------------------------- */
+
+/* Usamos Flexbox en la predicción para centrar y separar el texto y la imagen */
+.text-sing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Separación entre el título del signo y la imagen */
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  border-bottom: 2px dashed #e0e0e0;
+}
+
+.text-sing h3 {
+  margin: 0;
+  color: #38a169; /* Título del signo también en verde pastel */
+  font-size: 1.8rem;
+}
+
+.img {
+  width: 80px; /* Ligeramente más grande */
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.text-prediction {
+  color: #555;
+  text-align: justify;
+  font-size: 1.1rem; /* Ligeramente más grande */
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN (Para móviles) */
+/* ------------------------------------------------------------------- */
+@media (max-width: 850px) {
+  /* En pantallas más pequeñas, las tarjetas se apilan (gracias a flex-wrap: wrap;) */
+  .main-container {
+    flex-direction: column; /* Asegura el apilamiento */
+    align-items: center; /* Centra las tarjetas apiladas */
+  }
+  
+  .div-card {
+    max-width: 90%; /* Ocupa casi todo el ancho disponible */
+  }
+}
+
+@media (max-width: 600px) {
+  .div-card {
+    padding: 20px;
+  }
+
+  .text-sing {
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 15px;
+  }
+
+  .img {
+    width: 60px;
+    height: 60px;
+  }
+}
